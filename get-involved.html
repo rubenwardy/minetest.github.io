@@ -26,7 +26,7 @@ redirect_from:
       {% for link in site.data[row] %}
       <a class="column is-narrow has-text-centered no-underline hover-enlarge" href="{{ link.url }}">
         <div class="image">
-          <img src="{{ '/media/logos/' | append: link.icon | relative_url }}" alt="{{ link.name }} logo">
+          <img src="{{ '/media/logos/' | append: link.icon | prepend: site.baseurl_root }}" alt="{{ link.name }} logo">
         </div>
         <span class="title">{{ link.name }}</span>
       </a>

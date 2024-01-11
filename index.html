@@ -1,8 +1,6 @@
 ---
-title: Minetest | Open source voxel game engine
-description: >-
-  An open source voxel game engine. Play one of our many games, mod a game to
-  your liking, make your own game, or play on a multiplayer server.
+title: home.title
+description: home.description
 title_append: false
 image: /media/favicon/194x194.png
 layout: default
@@ -17,9 +15,7 @@ redirect_from:
       <div class="column is-10 is-9-desktop is-8-widescreen is-7-fullhd">
         <h1 class="title">Minetest</h1>
         <p class="home-paragraph">
-          An open source voxel game engine.
-          Play one of our many games, mod a game to your liking, make your own game,
-          or play on a multiplayer server.
+          {% t home.description %}
         </p>
         <p class="home-paragraph">
           Available for Windows, macOS, GNU/Linux, FreeBSD, OpenBSD, DragonFly BSD, and Android.
@@ -86,10 +82,10 @@ redirect_from:
 
       {% for image in site.data.gallery %}
         <figure class="column is-half">
-          <a class="image is-16by9" href="{{ image.image | relative_url }}">
+          <a class="image is-16by9" href="{{ image.image | prepend: site.baseurl_root }}">
             <img
               style="background-color: #ccc"
-              src="{{ image.image | replace: ".", "-thumb." | relative_url }}"
+              src="{{ image.image | replace: ".", "-thumb." | prepend: site.baseurl_root }}"
               alt="{{ image.title }}">
           </a>
           {% if image.title %}
